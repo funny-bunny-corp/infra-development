@@ -121,6 +121,14 @@ services:
     networks:
       - paymentic
 
+  presto-coordinator:
+    image: apachepinot/pinot-presto
+    restart: unless-stopped
+    ports:
+      - "18080:8080"
+    networks:
+      - paymentic
+
 volumes:
   postgres:
   mongodb_data_cont:
